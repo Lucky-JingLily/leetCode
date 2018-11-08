@@ -6,19 +6,48 @@ package datastructure.linetable;
  */
 
 public class ArrayList implements List {
+
+    // 底层是一个数组，未确定长度
+    private Object[] elementData;
+
+    // 元素的个数，非数组分配的空间
+    private int size;
+
+    /**
+     * 无参构造
+     */
+    public ArrayList() {
+        // 没有指定长度，默认为4
+        this(4);
+
+        // 没有指定长度，长度是0
+//        elementData = new Object[]{};
+    }
+
+    /**
+     * 指定数组初始长度
+     * @param initialCapacity
+     */
+    public ArrayList(int initialCapacity) {
+        // 给数组分配指定数量的空间
+        elementData = new Object[initialCapacity];
+        // 指定顺序表的元素个数
+//        size = 0;
+    }
+
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public Object get(int i) {
-        return null;
+        return elementData[i];
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
@@ -38,7 +67,12 @@ public class ArrayList implements List {
 
     @Override
     public void add(Object e) {
+        // 给数组赋值
+        elementData[size] = e;
+        // 元素个数+1
+        size++;
 
+//        elementData[size++] = e;
     }
 
     @Override
