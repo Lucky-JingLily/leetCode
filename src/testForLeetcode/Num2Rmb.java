@@ -1,3 +1,5 @@
+package testForLeetcode;
+
 import java.util.Arrays;
 
 public class Num2Rmb {

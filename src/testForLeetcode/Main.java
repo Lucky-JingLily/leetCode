@@ -1,3 +1,5 @@
+package testForLeetcode;
+
 import java.util.*;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntUnaryOperator;
