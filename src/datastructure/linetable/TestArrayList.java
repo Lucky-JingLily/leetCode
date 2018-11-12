@@ -11,12 +11,19 @@ public class TestArrayList {
         list.add(321);
         list.add(456);
         list.add(654);
-//        list.add(789);
-//        list.add(987);
+        list.add(3, 666);
+        list.add(4,555);
+        list.add(789);
+        list.add(987);
+        list.add(654);
+        list.add(789);
+        list.add(987);
 
         System.out.println(list.size());
         System.out.println(list.isEmpty());
 
-        System.out.println(list.get(2));
+        System.out.println(list.get(11));
+
+        System.out.println(list.toString());
     }
 }
