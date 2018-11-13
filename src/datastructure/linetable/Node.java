@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.linetable;
 
 /**
  * 单链表节点
@@ -9,6 +9,10 @@ public class Node {
 
     Object data;
     Node next;
+
+    public Node() {
+
+    }
 
     public Node(Object data) {
         super();
