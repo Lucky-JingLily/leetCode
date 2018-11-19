@@ -1,11 +1,9 @@
 package datastructure.btree;
 
-import sun.reflect.generics.tree.Tree;
-
 public class Node {
 
     Object data;
-    Node liftChild;
+    Node leftChild;
     Node rightChild;
 
     public Node() {
@@ -16,9 +14,9 @@ public class Node {
         this.data = data;
     }
 
-    public Node(Object data, Node liftChild, Node rightChild) {
+    public Node(Object data, Node leftChild, Node rightChild) {
         this.data = data;
-        this.liftChild = liftChild;
+        this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
 
@@ -26,7 +24,7 @@ public class Node {
     public String toString() {
         return "Node{" +
                 "data=" + data +
-                ", liftChild=" + liftChild +
+                ", leftChild=" + leftChild +
                 ", rightChild=" + rightChild +
                 '}';
     }
@@ -39,12 +37,12 @@ public class Node {
         this.data = data;
     }
 
-    public Node getLiftChild() {
-        return liftChild;
+    public Node getLeftChild() {
+        return leftChild;
     }
 
-    public void setLiftChild(Node liftChild) {
-        this.liftChild = liftChild;
+    public void setLeftChild(Node leftChild) {
+        this.leftChild = leftChild;
     }
 
     public Node getRightChild() {
