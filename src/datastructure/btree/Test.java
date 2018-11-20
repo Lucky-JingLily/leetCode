@@ -30,10 +30,12 @@ public class Test {
         btree.postOrderTraverse();
 
         // 中序遍历非递归（栈）
-
+        btree.inOrderByStack();
         // 层次遍历（队列）
+        btree.levelOrderByStack();
 
         // 在二叉树中查找某个值
+        System.out.println(btree.findKey(7));
 
         // 二叉树高度
         System.out.println(btree.getHeight());

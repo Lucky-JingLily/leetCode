@@ -1,5 +1,9 @@
 package datastructure.btree;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class LinkedBinaryTree implements BinaryTree {
 
     private Node root; // 根节点
@@ -56,7 +60,25 @@ public class LinkedBinaryTree implements BinaryTree {
 
     @Override
     public Node findKey(int value) {
-        return null;
+        return this.findKey(value, root);
+    }
+
+    public Node findKey(int value, Node root) {
+        if (root == null) {
+            return null;
+        } else if (root != null && (int)root.data == value) {
+            return root;
+        } else {
+            Node node1 = this.findKey(value, root.leftChild);
+            Node node2 = this.findKey(value, root.rightChild);
+            if (node1 != null && (int)node1.data == value) {
+                return node1;
+            } else if (node2 != null && (int)node2.data == value) {
+                return node2;
+            } else {
+                return null;
+            }
+        }
     }
 
     @Override
@@ -113,7 +135,23 @@ public class LinkedBinaryTree implements BinaryTree {
 
     @Override
     public void inOrderByStack() {
+        System.out.println("中序非递归遍历：");
+        Deque<Node> stack = new LinkedList<Node>();
 
+        Node current = root;
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.leftChild;
+            }
+
+            if (!stack.isEmpty()) {
+                current = stack.pop();
+                System.out.print(current.data + " ");
+                current = current.rightChild;
+            }
+        }
+        System.out.println();
     }
 
     @Override
@@ -128,6 +166,25 @@ public class LinkedBinaryTree implements BinaryTree {
 
     @Override
     public void levelOrderByStack() {
-
+        System.out.println("按照层次遍历：");
+        if (root == null) {
+            return;
+        }
+        Queue<Node> queue = new LinkedList<Node>();
+        ((LinkedList<Node>) queue).add(root);
+        while (queue.size() != 0) {
+            int len = queue.size();
+            for (int i = 0; i < len; i++) {
+                Node temp = queue.poll();
+                System.out.print(temp.data + " ");
+                if (temp.leftChild != null) {
+                    ((LinkedList<Node>) queue).add(temp.leftChild);
+                }
+                if (temp.rightChild != null) {
+                    ((LinkedList<Node>) queue).add(temp.rightChild);
+                }
+            }
+        }
+        System.out.println();
     }
 }
