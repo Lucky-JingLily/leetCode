@@ -1,10 +1,16 @@
 package datastructure.linetable;
 
+import java.util.Deque;
+import java.util.Queue;
+
 public class TestSingleLinkedList {
 
     public static void main(String[] args) {
 //        List list = new ArrayList();
         List list = new SingleLinkedList();
+
+        Deque deque;
+        Queue queue;
 
         list.add(123);
         list.add(321);
