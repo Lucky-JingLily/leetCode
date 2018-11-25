@@ -53,6 +53,10 @@ public class SingleLinkedList implements List {
 
     @Override
     public void add(int i, Object e) {
+
+        if (i < 0 || i > size) {
+            throw new MyArrayIndexOutOfBoundsException("链表越界异常");
+        }
         // 找到前一个节点，从head节点开始
         Node p = head;
         for (int j = 0; j < i; j++) {
@@ -95,5 +99,24 @@ public class SingleLinkedList implements List {
     @Override
     public Object replace(int i, Object e) {
         return null;
+    }
+
+    public String toString() {
+        if (size == 0) {
+            return "";
+        }
+        StringBuilder builder = new StringBuilder("[");
+        Node p = head;
+        for (int i = 0; i < size; i++) {
+            // 移动到下一个节点
+            p = p.next;
+            if (i == size-1) {
+                builder.append(p.data);
+            } else {
+                builder.append(p.data + ",");
+            }
+        }
+        builder.append("]");
+        return builder.toString();
     }
 }

@@ -20,8 +20,8 @@ public class TestSingleLinkedList {
 
         System.out.println(list.size());
         System.out.println(list.isEmpty());
-
-        System.out.println(list.get(11));
+//        list.add(111, 123);
+        System.out.println(list.get(10));
 
         System.out.println(list.toString());
     }

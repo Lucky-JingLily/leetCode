@@ -22,7 +22,7 @@ public class TestArrayList {
         System.out.println(list.size());
         System.out.println(list.isEmpty());
 
-        System.out.println(list.get(11));
+        System.out.println(list.get(10));
 
         System.out.println(list.toString());
     }
