@@ -39,7 +39,7 @@ public class MergePass {
         if(L == R) {
             return;
         }
-        int mid = L + ((R - L) >> 1);
+        int mid = (L + R) / 2;
         sort(arr, L, mid);
         sort(arr, mid + 1, R);
         merge(arr, L, mid, R);
